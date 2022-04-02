@@ -2,3 +2,7 @@
 *.css.map
 *.sass.map
 *.scss.map
+css/sass/*
+css/sass/*.scss
+css/sass/*.scss.map
+icons/*
