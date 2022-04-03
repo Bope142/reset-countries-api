@@ -384,12 +384,24 @@ body {
   overflow: hidden;
 }
 
+select {
+  border: none !important;
+  padding: 15px !important;
+}
+select option {
+  border: none !important;
+  padding: 15px !important;
+}
+
 .container {
   height: 100%;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   grid-row-gap: 50px;
+}
+.container * {
+  transition: all 0.2s linear !important;
 }
 
 .container__header {
@@ -402,7 +414,7 @@ body {
   justify-content: space-between;
   width: 100%;
   background: white;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 .container__header .header__title-page {
   font-family: "Nunito Sans", sans-serif;
@@ -509,6 +521,8 @@ body {
   background: transparent;
   outline: none;
   font-size: 14px;
+  align-self: stretch !important;
+  width: 100%;
 }
 .page-home .container__main #filterCountry {
   padding: 15px;
@@ -520,14 +534,19 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
+.page-home .show-list {
+  height: auto !important;
+  flex: none !important;
+}
 .page-home .container__country {
   overflow: hidden;
   flex: none;
-  height: auto;
+  height: 250px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 10px 5px;
   gap: 50px;
+  position: relative;
 }
 .page-home .container__country .country {
   flex: none;
@@ -544,7 +563,7 @@ body {
   height: 40%;
   display: flex;
   overflow: hidden;
-  background: red;
+  background: transparent;
   width: 100%;
 }
 .page-home .container__country .country .country__flag img,
@@ -585,6 +604,102 @@ body {
   font-weight: 400;
   font-family: "Nunito Sans", sans-serif;
 }
+.page-home .container__country .modal-loading {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex !important;
+}
+.page-home .container__country .hidden {
+  display: none !important;
+}
+.page-home .container__country .loading-country-other {
+  display: none;
+  flex-direction: column;
+  grid-row-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.page-home .container__country .loading-country-other .lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.page-home .container__country .loading-country-other .lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #111517;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.page-home .container__country .loading-country-other .lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.page-home .container__country .loading-country-other .lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.page-home .container__country .loading-country-other .lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+.page-home .container__country .loading-country {
+  display: none;
+  flex-direction: column;
+  grid-row-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.page-home .container__country .loading-country .lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.page-home .container__country .loading-country .lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #111517;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.page-home .container__country .loading-country .lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.page-home .container__country .loading-country .lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.page-home .container__country .loading-country .lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
 
 @media only screen and (max-width: 1200px) {
   .container__country {
@@ -620,6 +735,14 @@ body {
   .country {
     align-self: center !important;
     height: 400px !important;
+    width: 80% !important;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .country {
+    align-self: stretch !important;
+    height: 400px !important;
+    width: auto !important;
   }
 }
 .page-detail {
@@ -769,6 +892,61 @@ body {
   .container__page {
     padding: 20px 25px;
   }
+}
+.dark-mode {
+  background: #202c37;
+}
+.dark-mode .box-container-l {
+  background: white !important;
+}
+.dark-mode select {
+  color: #fafafa !important;
+}
+.dark-mode select * {
+  color: #fafafa !important;
+}
+.dark-mode input {
+  color: #fafafa !important;
+}
+.dark-mode input::placeholder {
+  color: #fafafa !important;
+}
+.dark-mode .box-container {
+  background: #2b3945 !important;
+}
+.dark-mode .label-text {
+  color: #fafafa;
+}
+.dark-mode .icon * {
+  fill: #fafafa !important;
+}
+
+.ligth-mode {
+  background: #fafafa;
+}
+.ligth-mode .box-container-l {
+  background: #111517 !important;
+}
+.ligth-mode select {
+  color: #111517 !important;
+}
+.ligth-mode select * {
+  color: #111517 !important;
+}
+.ligth-mode input {
+  color: #111517 !important;
+}
+.ligth-mode input::placeholder {
+  color: #111517 !important;
+}
+.ligth-mode .box-container {
+  background: white !important;
+}
+.ligth-mode .label-text {
+  color: #111517;
+}
+.ligth-mode .icon * {
+  fill: #111517 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
