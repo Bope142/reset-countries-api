@@ -7,7 +7,7 @@ Solution URL :https://github.com/Bope142/reset-countries-api.gitt
 
 Live Site URL :  https://web-countries-app.netlify.app/
 
-Frontend Mentor : https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db
+Frontend Mentor : https://www.frontendmentor.io/solutions/api-rest-country-uiscssgridcssflexboxjsfetch-Syww8ghQc
 
 # My process
 
