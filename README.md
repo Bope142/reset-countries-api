@@ -3,9 +3,9 @@ Mentor frontend challenge which is to integrate the Countries V2 REST API to ext
 
 # Links of my solution
 
-Solution URL :https://github.com/Bope142/Advice-generator-app.git
+Solution URL :https://github.com/Bope142/reset-countries-api.gitt
 
-Live Site URL :  https://advice-generator-web.netlify.app/
+Live Site URL :  https://web-countries-app.netlify.app/
 
 Frontend Mentor : https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db
 
